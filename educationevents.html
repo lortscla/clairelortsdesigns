@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education and Events</title> 
+
+     <link href="hamburgers.css" rel="stylesheet"> 
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+
+<link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+<link rel="shortcut icon" href="favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+<link rel="manifest" href="favicon/site.webmanifest" />
+
+
+</head>
+<body> 
+
+
+    <!------------------------------------------ HERO ---------------------------------------->
+
+
+   <div class="topbar">
+    
+    <!-- Secondary Links (unchanged) -->
+    <div class="secondary-nav-links">
+        <nav>
+            <ul>
+                <li><a href="membership.html">Ways to Give</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="navbar">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <img src="images/logo-final.png" alt="">
+        </a>
+
+        <!-- DESKTOP NAV -->
+        <nav class="desktop-nav">
+            <ul class="nav-links">
+
+                <li class="dropdown">
+                    <a href="collection.html">Collection</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="exhibitions.html">Exhibitions</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="exhibitions.html#container-exhibitions">Current</a></li>
+                        <li><a href="exhibitions.html#upcoming">Upcoming</a></li>
+                        <li><a href="exhibitions.html#past">Past</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="educationevents.html">Education & Events</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="educationevents.html#educationtag">Education</a></li>
+                        <li><a href="educationevents.html#eventstag">Events</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="about.html"class="buttons">Buy Tickets</a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <!-- MOBILE HAMBURGER -->
+        <div id="hamburger-btn">
+            <button class="hamburger">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </button>
+
+            <!-- MOBILE NAV -->
+            <nav class="mobile-nav">
+                <ul class="mobile-links">
+
+                           <li><a href="collection.html">Collection</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="membership.html">Ways to Give</a></li>
+
+                    <!-- Exhibitions Collapsible -->
+                    <li class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle">
+                            Exhibitions <span class="toggle-symbol">+</span>
+                        </button>
+                        <ul class="mobile-submenu">
+                            <li><a href="exhibitions.html#container-exhibitions">Current</a></li>
+                            <li><a href="exhibitions.html#upcoming">Upcoming</a></li>
+                            <li><a href="exhibitions.html#past">Past</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Education Collapsible -->
+                    <li class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle">
+                            Education & Events <span class="toggle-symbol">+</span>
+                        </button>
+                        <ul class="mobile-submenu">
+                            <li><a href="educationevents.html#educationtag">Education</a></li>
+                           <li><a href="educationevents.html#eventstag">Events</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="mobile-ticket-btn">
+                        <div class="buttons"><a href="about.html">Buy Tickets</a></div>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</div>
+
+   <div class="hero">
+    <img src="images/hero-1.webp" alt="hero image">
+    </div>
+
+   <!------------------------------------------ education and events ---------------------------------------->
+
+<div id="container-education-events">
+
+  <h1>Education & Events</h1>   
+
+  <h1 id="eventstag" style="color:black ; padding-bottom: 0">Events</h1>   
+
+         <div class="events">
+            <img src="images/education-events/events.webp" alt="1">
+            <p>
+              Follow our Facebook page for upcoming events and schedules! <br>
+            </p>
+          </div>
+
+  <h1 id="educationtag" style="color:black ; padding-bottom: 0">Education</h1>   
+
+   <h2>For Schools</h2>
+
+      <div class="exhibitions-row">
+
+          <div class="collection-item">
+            <img src="images/education-events/field-trips.webp" alt="1">
+            <p>
+                Guided field trips with hands-on activities
+              </p>
+          </div>
+
+          <div class="collection-item">
+            <img src="images/education-events/teacher-resources.webp" alt="1">
+            <p>
+                Teacher resources and lesson plans
+              </p>
+          </div>
+     
+       </div>
+
+    <h2>For Adults</h2>
+
+        <div class="exhibitions-row">
+
+          <div class="collection-item">
+            <img src="images/education-events/studio-workshop.webp" alt="1">
+            <p>
+                Studio workshops with practicing artists
+              </p>
+          </div>
+
+          <div class="collection-item">
+            <img src="images/education-events/lecture-series.webp" alt="1">
+            <p>
+                Lecture series exploring art history and current trends 
+              </p>
+          </div>
+     
+       </div>
+
+   <h2>For Families</h2>
+
+        <div class="exhibitions-row">
+
+          <div class="collection-item">
+            <img src="images/education-events/creative-space.webp" alt="1">
+            <p>
+                Drop-in art making inthe Creativity Lab
+              </p>
+          </div>
+
+          <div class="collection-item">
+            <img src="images/education-events/festival.webp" alt="1">
+            <p>
+                Seasonal family festivals! 
+              </p>
+          </div>
+     
+       </div>
+
+       </div>
+
+  <!------------------------------------------ FOOTER ---------------------------------------->
+
+<footer>
+  
+  <div class="footer-left">
+     <a href="index.html" class="logo">
+        <img src="images/logo-final.png" alt="">
+      </a>
+
+      <button class="buttons">
+        <a href="about.html">Buy Tickets</a>
+        </button>
+  </div>
+
+    <div class="footer-middle">
+      <p><strong>Hours</strong> <br> Tuesday - Friday 10 am - 6 pm <br> Saturday 10 am - 8 pm <br> Sunday 12 pm - 5 pm <br> Closed Mondays & Major Holidays </p>
+      <p>2025 © Aurora Art Museum</p>
+    </div>
+   
+    <div class="footer-right">
+      
+      <div>
+      <p><strong>Contact</strong><br> 717-123-4567<br> <a href="info@auroraartmuseum.com">info@auroraartmuseum.com</a></p>
+      </div>
+
+      <div class="social">
+        <div class="social-icons">
+      <a><img src="images/IG_100px_72ppi.webp" alt="Instagram"></a>
+      <a><img src="images/FB_100px_72ppi.webp" alt="Facebook"></a>
+      </div>
+       <div class="social-text">
+         <p>aroraart</p>
+         <p>aroraart</p>
+         </div>
+         </div>
+
+    </div>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
