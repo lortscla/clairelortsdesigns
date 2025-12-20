@@ -2,7 +2,7 @@
   --h1-color: #641435;
   --black-text-color: #191919;
   --white-text-color: #fff;
-  --hover-color: #6faeb8;
+  --hover-color: #818c7c;
   --body-font-family: 'Montserrat', sans-serif;
   --header-font-family: 'Garamond', serif;
   --h1-font-weight: bold;
@@ -51,19 +51,26 @@ html {
     position: relative;
     width: 100%;    
     max-width: 1440px;
+    z-index: 1;
+    pointer-events: none;
+ }
+
+ .hero img {
+  margin-top: -160px;
  }
 
 .navbar {
-  padding: 40px 0 0 0;
+  padding: 30px 0 0 0;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: left;
   box-sizing: border-box;
-  background-color: white;
-  justify-content: center;
+  background-color: transparent;
+  justify-content: left;
   align-items:center;
-  z-index: 1000;
+  z-index: 2000;
+  margin-left: 5%;
 }
 
 .logo img {
@@ -71,31 +78,28 @@ html {
   width: auto;
   display: block;
   transition: transform 0.3s ease;
-  padding: 0 0 15px 0;
-  margin-right: 80px;
+  padding: 0 0 20px 0;
+  margin-right: 0;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   justify-content: center;
-  padding: 0 0 20px 10px;
-  gap: 115px;
+  padding-top: 20px;
+  gap: 70px;
   margin: 0 auto;
-  border-radius: 15px;
-  margin-top: 30px;
-  align-items: baseline;
+  margin: 30px 0 0 120px;
+  align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--black-text-color);
+  color: var(--h1-color);
   font-weight: var(--h2-font-weight);
-  font-size: var(--button-font-size);
+  font-size: 14px;
   font-family: var(--header-font-family);
-  font-style: var(--button-text-style);
   text-transform: var(--button-text-style);
-   justify-content:first baseline;
 }
 
 .nav-links a:hover, 
@@ -109,8 +113,8 @@ html {
   justify-content: flex-start;
   top: 20px;
   right: 0;
-  z-index: 1500;
-  margin-right: 50px;
+  z-index: 2001;
+  margin-right: 100px;
 }
 
 .secondary-nav-links ul {
@@ -122,10 +126,10 @@ html {
 
 .secondary-nav-links a {
   text-decoration: none;
-  color: var(--black-text-color);
+  color: var(--h1-color);
   font-family: var(--header-font-family);
   font-weight: var(--h2-font-weight);
-  font-size:var(--button-font-size);
+  font-size: 13px;
   text-transform: var(--button-text-style);
 }
 
@@ -193,6 +197,63 @@ a.buttons {
 .buttons a{
   color: var(--white-text-color);
   text-decoration: none;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.4s ease;
+}
+
+/* 5 images visible 
+.carousel-track img {
+  width: calc((100% - (4 * 16px)) / 5);
+  flex-shrink: 0;
+  border-radius: 8px;
+  object-fit: cover;
+} */
+
+.carousel-track img {
+  width: calc((100% - (2 * 10px)) / 3);
+  flex-shrink: 0;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Arrows */
+.carousel-btn {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 10px;
+  color: #333;
+}
+
+.carousel-btn:hover {
+  color: #818c7c;
+}
+
+.carousel-btn.prev {
+  margin-right: 10px;
+}
+
+.carousel-btn.next {
+  margin-left: 10px;
 }
 
 /*----------------------------------------- body -----------------------------------------*/
