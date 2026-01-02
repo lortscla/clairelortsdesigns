@@ -7,7 +7,7 @@
   --header-font-family: 'Garamond', serif;
   --h1-font-weight: bold;
   --h2-font-weight: bold;
-  --h1-font-size: 35px;
+  --h1-font-size: 37px;
   --h2-font-size: 25px;
   --body-font-size: 16px;
   --button-font-size: 15px;
@@ -25,7 +25,7 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1500px;
   margin: 0 auto;
   scroll-behavior: smooth;
 }
@@ -50,7 +50,7 @@ html {
     margin: 0 auto;
     position: relative;
     width: 100%;    
-    max-width: 1440px;
+    max-width: 1500px;
     z-index: 1;
     pointer-events: none;
  }
@@ -184,32 +184,51 @@ html {
     transform: translateY(-5px);
 }
 
-.buttons {
-  background-color: var(--button-background-color);
-  border: none;
-  border-radius: 10px;
-  padding: 15px 25px;
-  display: inline-block;
-  margin-left: 44%;
-  margin-top: 40px;
-  text-decoration: none;
-  font-weight: var(--h2-font-weight);
+/*----------------------------------------- throughout -----------------------------------------*/
+
+#container-about,
+#container-otherwork,
+#container-wooden,
+#container-home {
+  max-width: 1500px;
+  background-color: #fff;
+  padding: 0 40px 40px 40px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;      
   font-family: var(--header-font-family);
-  text-transform: var(--button-text-style);
-  font-size: var(--button-font-size);
-  text-wrap: nowrap;
-  padding: 15px 25px;
+  color: var(--h1-color);
+  font-size: var(--h1-font-size);
+  padding: 40px 0 0 0;
+}
+
+h2 {
+  font-family: var(--header-font-family);
+  color: var(--h1-color);
+  font-size: var(--h2-font-size);
+  font-weight:normal;
   text-align: center;
+  margin: 30px auto;
+  max-width: 70%;
 }
 
-a.buttons {
-  color: var(--white-text-color);
+h3 {
+  text-align: center;      
+  font-family: var(--body-font-family);
+  color: var(--black-text-color);
+  font-size: 18px;
+  padding-bottom: 30px;
 }
 
-.buttons a{
-  color: var(--white-text-color);
-  text-decoration: none;
+p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  color: var(--black-text-color);
 }
+
+/*----------------------------------------- carousel intro -----------------------------------------*/
 
 .carousel-wrapper {
   position: relative;
@@ -221,13 +240,13 @@ a.buttons {
 }
 
 .carousel-viewport {
-  overflow: hidden;
-  width: 100%;
+  overflow:hidden;
+  width: 95%;
 }
 
 .carousel-track {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   transition: transform 0.4s ease;
   margin: 50px 0 50px 0;
 }
@@ -271,52 +290,57 @@ a.buttons {
 .wooden-description p {
   font-size: var(--body-font-size);
    font-family: var(--body-font-family);
+   margin-bottom: 120px;
 }
 
-/*----------------------------------------- body -----------------------------------------*/
+/*----------------------------------------- dif. types wooden jewelry -----------------------------------------*/
 
-#container-about,
-#container-otherwork,
-#container-wooden,
-#container-home {
-  max-width: 1500px;
-  background-color: #fff;
-  padding: 0 40px 40px 40px;
-}
-
-h1 {
-  text-align: center;      
-  font-family: var(--header-font-family);
-  color: var(--h1-color);
-  font-size: var(--h1-font-size);
-  padding: 40px 0 0 0;
-}
-
-h2 {
-  font-family: var(--header-font-family);
-  color: var(--black-text-color);
-  font-size: var(--h2-font-size);
-  font-weight: bold;
-  text-align: center;
-  display:flex;
+.wooden-type {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
 }
 
-h3 {
-  text-align: center;      
-  font-family: var(--body-font-family);
-  color: var(--black-text-color);
-  font-size: 18px;
-  padding-bottom: 30px;
+.wooden-image img {
+  width: 75%;
+  height: auto;
 }
 
-p {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size);
-  color: var(--black-text-color);
+.wooden-image {
+  display: flex;
+  justify-content: right;
+  padding-right: 40px;
+ 
 }
+
+.wooden-text {
+  width: 40%;
+}
+
+.wooden-type-reverse {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.wooden-image-reverse img {
+  width: 75%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wooden-text-reverse {
+  width: 40%;
+}
+
+/*----------------------------------------- video section -----------------------------------------*/
 
 .video-section {
   display: flex;
