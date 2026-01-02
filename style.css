@@ -212,6 +212,7 @@ h2 {
   text-align: center;
   margin: 30px auto;
   max-width: 70%;
+  padding-bottom: 20px;
 }
 
 h3 {
@@ -295,49 +296,53 @@ p {
 
 /*----------------------------------------- dif. types wooden jewelry -----------------------------------------*/
 
-.wooden-type {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.wooden-type,
+.wooden-type-reverse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  margin: 0 auto;
   width: 80%;
+  margin: 0 auto;
+  column-gap: 0px;
 }
 
-.wooden-image img {
-  width: 75%;
+.wooden-image img,
+.wooden-image-reverse img {
+  width: 100%;
+  max-width: 420px;
   height: auto;
+  border-radius: 8px;
 }
 
 .wooden-image {
-  display: flex;
-  justify-content: right;
-  padding-right: 40px;
- 
+  grid-column: 1;
+  justify-self: end;
+}
+
+.wooden-text,
+.wooden-text-reverse {
+  grid-column: 2;
+  width: 70%;
 }
 
 .wooden-text {
-  width: 40%;
-}
-
-.wooden-type-reverse {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  width: 80%;
-}
-
-.wooden-image-reverse img {
-  width: 75%;
-  height: auto;
-  display: flex;
-  justify-content: flex-end;
+  padding-left: 15px;
 }
 
 .wooden-text-reverse {
-  width: 40%;
+  padding-right: 5px;
+  text-align: right;
+  justify-self: right;
+  padding-right: 15px;
+}
+
+.wooden-type-reverse .wooden-text-reverse {
+  grid-column: 1;
+}
+
+.wooden-image-reverse {
+  grid-column: 2;
+  justify-self: start;
 }
 
 /*----------------------------------------- video section -----------------------------------------*/
@@ -654,6 +659,17 @@ footer {
   .mobile-links > li { font-size: 16px; padding: 10px 6px; }
   .mobile-dropdown-toggle { font-size: 16px; }
   .mobile-submenu li { font-size: 14px; padding-left: 8px; }
+
+  .wooden-type,
+  .wooden-type-reverse {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .wooden-image,
+  .wooden-image-reverse {
+    justify-self: center;
+  }
 
 }
 
