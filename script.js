@@ -31,6 +31,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+ /* =========================
+     HERO VIDEO
+  ========================= */
+
+  const video = document.getElementById('myVideo');
+  const source = video.querySelector('source');
+  
+  // Load video only when it comes into view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        source.src = source.dataset.src;
+        video.load();
+        video.playbackRate = 0.65;
+        observer.unobserve(video);
+      }
+    });
+  });
+  
+  observer.observe(video);
+
   /* =========================
      IMAGE CAROUSEL
   ========================= */

@@ -7,8 +7,8 @@
   --header-font-family: 'Garamond', serif;
   --h1-font-weight: bold;
   --h2-font-weight: bold;
-  --h1-font-size: 37px;
-  --h2-font-size: 25px;
+  --h1-font-size: 40px;
+  --h2-font-size: 30px;
   --body-font-size: 16px;
   --button-font-size: 15px;
   --button-background-color: #641435;
@@ -201,7 +201,7 @@ h1 {
   font-family: var(--header-font-family);
   color: var(--h1-color);
   font-size: var(--h1-font-size);
-  padding: 40px 0 0 0;
+  padding-bottom: 40px;
 }
 
 h2 {
@@ -212,7 +212,7 @@ h2 {
   text-align: center;
   margin: 30px auto;
   max-width: 70%;
-  padding-bottom: 20px;
+  padding: 40px 0 20px 0;
 }
 
 h3 {
@@ -227,6 +227,31 @@ p {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size);
   color: var(--black-text-color);
+}
+
+/*----------------------------------------- hero video -----------------------------------------*/
+
+.hero-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+}
+
+.hero-video {
+  width: 1000px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+    margin-left: 0;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: center 15%;
 }
 
 /*----------------------------------------- carousel intro -----------------------------------------*/
@@ -282,16 +307,14 @@ p {
 }
 
 .wooden-description {
-  column-count: 2;
-  column-gap: 70px;
-  width: 77%;
+  width: 65%;
   margin: 0 auto;
+  padding: 0 20px 0 40px;
 }
 
 .wooden-description p {
   font-size: var(--body-font-size);
    font-family: var(--body-font-family);
-   margin-bottom: 120px;
 }
 
 /*----------------------------------------- dif. types wooden jewelry -----------------------------------------*/
@@ -345,7 +368,7 @@ p {
   justify-self: start;
 }
 
-/*----------------------------------------- video section -----------------------------------------*/
+/*----------------------------------------- pbs video section -----------------------------------------*/
 
 .video-section {
   display: flex;
