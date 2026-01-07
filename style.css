@@ -240,10 +240,10 @@ p {
 
 .hero-video {
   width: 1000px;
-  height: 400px;
+  height: 600px;
   overflow: hidden;
   border-radius: 8px;
-    margin-left: 0;
+  clip-path: url(#wave-clip);
 }
 
 video {
@@ -252,6 +252,17 @@ video {
   object-fit: cover;
   display: block;
   object-position: center 15%;
+}
+
+.wooden-description {
+  width: 65%;
+  margin: 0 auto;
+  padding: 0 20px 0 40px;
+}
+
+.wooden-description p {
+  font-size: var(--body-font-size);
+   font-family: var(--body-font-family);
 }
 
 /*----------------------------------------- carousel intro -----------------------------------------*/
@@ -306,16 +317,6 @@ video {
   margin-left: 10px;
 }
 
-.wooden-description {
-  width: 65%;
-  margin: 0 auto;
-  padding: 0 20px 0 40px;
-}
-
-.wooden-description p {
-  font-size: var(--body-font-size);
-   font-family: var(--body-font-family);
-}
 
 /*----------------------------------------- dif. types wooden jewelry -----------------------------------------*/
 
