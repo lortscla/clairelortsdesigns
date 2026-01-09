@@ -44,22 +44,6 @@ html {
   max-width: 1440px;
 }
 
-.hero {
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;    
-    max-width: 1500px;
-    z-index: 1;
-    pointer-events: none;
- }
-
- .hero img {
-  margin-top: -160px;
-  width: 100%;
- }
-
 .navbar {
   padding: 30px 0 0 0;
   width: 100%;
@@ -229,13 +213,42 @@ p {
   color: var(--black-text-color);
 }
 
-/*----------------------------------------- hero video -----------------------------------------*/
+/*----------------------------------------- hero graphics & hero video -----------------------------------------*/
+
+.hero,
+.hero2,
+.hero3 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;    
+    max-width: 1500px;
+    z-index: 1;
+    pointer-events: none;
+ }
+
+ .hero img {
+  margin-top: -160px;
+  width: 100%;
+ }
+
+ .hero2 img {
+  margin-top: -100px;
+  width: 100%;
+ }
+
+ .hero3 img {
+  margin-top: -40px;
+  margin-bottom: -110px;
+  width: 100%;
+ }
 
 .hero-container {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  align-items: top;
+  align-items: flex-start;
 }
 
 .hero-video {
@@ -244,6 +257,7 @@ p {
   overflow: hidden;
   border-radius: 8px;
   clip-path: url(#wave-clip);
+  margin-top: -160px;
 }
 
 video {
@@ -409,11 +423,8 @@ footer {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: top;
-  padding: 20px 0 20px 0;
-  margin-top: 50px;
-  border-top: 1px solid var(--bg-color);
   text-align: center;
-  background-color: var(--bg-color);
+  padding-bottom: 30px;
 }
 
 .footer-left,
@@ -422,7 +433,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  z-index: 2;
 }
 
 .footer-left p,
