@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
   /* =========================
@@ -36,55 +35,79 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================= */
 
   const video = document.getElementById('myVideo');
-  const source = video.querySelector('source');
   
-  // Load video only when it comes into view
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        source.src = source.dataset.src;
-        video.load();
-        video.playbackRate = 0.65;
-        observer.unobserve(video);
-      }
+  // Only run video code if video exists on this page
+  if (video) {
+    const source = video.querySelector('source');
+    
+    // Load video only when it comes into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          source.src = source.dataset.src;
+          video.load();
+          video.playbackRate = 0.65;
+          observer.unobserve(video);
+        }
+      });
     });
-  });
-  
-  observer.observe(video);
+    
+    observer.observe(video);
+  }
 
   /* =========================
      IMAGE CAROUSEL
   ========================= */
 
-  const track = document.querySelector(".carousel-track");
-  const images = document.querySelectorAll(".carousel-track img");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
+const carouselWrappers = document.querySelectorAll(".carousel-wrapper, .carousel-wrapper-reverse");
 
-  if (track && images.length && prevBtn && nextBtn) {
-    let index = 0;
-    const gap = 16; // must match CSS gap
+carouselWrappers.forEach((wrapper, wrapperIndex) => {
+  const viewport = wrapper.querySelector(".carousel-viewport");
+  const track = wrapper.querySelector(".carousel-track");
+  const images = wrapper.querySelectorAll(".carousel-track img");
+  const prevBtn = wrapper.querySelector(".carousel-btn.prev");
+  const nextBtn = wrapper.querySelector(".carousel-btn.next");
 
-    function updateCarousel() {
-      const imageWidth = images[0].getBoundingClientRect().width + gap;
-      track.style.transform = `translateX(-${index * imageWidth}px)`;
-    }
-
-    nextBtn.addEventListener("click", () => {
-      if (index < images.length - 3) {
-        index++;
-        updateCarousel();
-      }
+  // Safety check - make sure all elements exist
+  if (!track || !viewport || !prevBtn || !nextBtn || images.length === 0) {
+    console.warn("Carousel", wrapperIndex, "missing elements:", {
+      track: !!track,
+      viewport: !!viewport, 
+      prevBtn: !!prevBtn,
+      nextBtn: !!nextBtn,
+      imageCount: images.length
     });
-
-    prevBtn.addEventListener("click", () => {
-      if (index > 0) {
-        index--;
-        updateCarousel();
-      }
-    });
-
-    window.addEventListener("resize", updateCarousel);
+    return;
   }
 
+  let index = 0;
+  const gap = 2; 
+
+  function updateCarousel() {
+    const imageWidth = images[0].getBoundingClientRect().width + gap;
+    track.style.transform = `translateX(-${index * imageWidth}px)`;
+  }
+
+  nextBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (index < images.length - 1) {
+      index++;
+    } else {
+      index = 0; // Loop back to first image
+    }
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (index > 0) {
+      index--;
+    } else {
+      index = images.length - 1; // Loop to last image
+    }
+    updateCarousel();
+  });
+
+  window.addEventListener("resize", updateCarousel);
+});
 });

@@ -67,15 +67,6 @@ html {
   margin-right: 0;
 }
 
-.logo-footer img {
-  height: 80px;
-  width: auto;
-  display: block;
-  transition: transform 0.3s ease;
-  padding: 0 0 10px 0;
-  margin-right: 0;
-} 
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -281,29 +272,37 @@ video {
 
 /*----------------------------------------- carousel intro -----------------------------------------*/
 
-.carousel-wrapper {
-  position: relative;
+.carousel-wrapper,
+.carousel-wrapper-reverse {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
 }
 
+.carousel-wrapper {
+justify-content: right;
+}
+
+.carousel-wrapper-reverse {
+  justify-content: left;
+}
+
 .carousel-viewport {
   overflow:hidden;
-  width: 95%;
+  width: 72%;
 }
 
 .carousel-track {
   display: flex;
-  gap: 12px;
+  gap: 2px;
   transition: transform 0.4s ease;
-  margin: 50px 0 50px 0;
+  height: 100%;
 }
 
 .carousel-track img {
-  width: calc((20% - (2 * 5px)) / 1);
+  height: 450px;
+  width: auto;
   flex-shrink: 0;
   border-radius: 8px;
   object-fit: cover;
@@ -315,12 +314,11 @@ video {
   border: none;
   font-size: 32px;
   cursor: pointer;
-  padding: 10px;
-  color: #333;
+  color: #232323;
 }
 
 .carousel-btn:hover {
-  color: #818c7c;
+  color: var(--hover-color);
 }
 
 .carousel-btn.prev {
@@ -364,17 +362,17 @@ video {
 }
 
 .wooden-text {
-  padding-left: 15px;
+  padding-left: 40px;
 }
 
 .wooden-text-reverse {
-  padding-right: 5px;
+  padding-right: 40px;
   text-align: right;
   justify-self: right;
-  padding-right: 15px;
 }
 
-.wooden-type-reverse .wooden-text-reverse {
+.wooden-text-reverse,
+ .wooden-text-reverse {
   grid-column: 1;
 }
 
@@ -434,6 +432,7 @@ footer {
   flex-direction: column;
   align-items: center;
   z-index: 2;
+  margin: 0 auto;
 }
 
 .footer-left p,
@@ -451,16 +450,11 @@ footer {
   justify-content: center;
 }
 
-.footer-left .logo-footer img {
-  display: flex;
-  margin: 0 auto;
-  max-width: 150px;
+.logo-footer img {
+  width: 200px;
+  transition: transform 0.3s ease;
+  margin-top: -60px;
 } 
-
-.footer-left .buttons {
-  margin: 0;
-  justify-content: right;
-}
 
 .social {
   display: flex;
