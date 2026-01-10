@@ -724,7 +724,7 @@ footer {
   /* Mobile navigation */
   .mobile-nav {
     position: fixed;
-    top: 0;
+    top: 10;
     right: -100%;
     width: 300px;
     height: 50vh;
@@ -945,6 +945,8 @@ footer {
 /* ================================Mobile landscape and smaller tablets (768px) */
 @media (max-width: 768px) {
   
+
+
   .logo img {
     height: 100px;
     width: auto;
@@ -966,11 +968,11 @@ footer {
 
   .hero {
     position: relative;
-    margin-top: 0;
+    margin-top: -30px;
   }
 
   .hero img {
-    margin-top:0;
+    margin-top: 10px;
     display:block;
   }
 
@@ -1075,12 +1077,13 @@ footer {
   }
 }
 
-/* Small mobile (480px) */
-@media (max-width: 480px) {
+/* ==========================================Small mobile (700px) */
+@media (max-width: 700px) {
   
-  /* Logo */
   .logo img {
-    height: 60px;
+    height: 100px;
+    width: auto;
+    padding: 0 0 10px 0;
   }
   
   .navbar {
@@ -1106,24 +1109,33 @@ footer {
     font-size: 14px;
   }
   
-  /* Hero images */
+  .navbar {
+    padding: 20px 0 0 0;
+    margin-left: 20px;
+  }
+
+  .hero {
+    position: relative;
+    margin-top: -30px;
+  }
+
   .hero img {
-    margin-top: -50px;
+    display:block;
+  }
+
+  .hero img {
+    margin-top:26px;
   }
   
   .hero2 img {
-    margin-top: -30px;
-  }
-  
-  .hero3 img {
-    margin-top: -10px;
+    margin-top: -60px;
     margin-bottom: -50px;
   }
-  
+   
   /* Hero video */
   .hero-video {
     height: 300px;
-    margin-top: -40px;
+    margin-top: -20px;
   }
   
   /* Containers */
@@ -1175,6 +1187,11 @@ footer {
     padding: 15px 10px 30px 10px;
   }
   
+  .process-wooden-text {
+    width: 85%;
+    padding: 0;
+  }
+
   /* Video */
   .video-text p {
     font-size: 18px;
@@ -1183,15 +1200,60 @@ footer {
   /* Footer */
   .logo-footer img {
     width: 120px;
+    background-color: var(--bg-color);
   }
   
   .social img {
     width: 35px;
   }
   
+  footer {
+    background-color: var(--bg-color);
+    padding-top: 40px;
+    gap: 5px;
+  }
+  
+  .hero3 img {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
   .footer-left,
   .footer-middle,
   .footer-right {
-    font-size: 14px;
+    font-size: 12px;
+    padding-bottom: 0;
   }
+}
+
+/* ==========================================Small mobile (620px) */
+@media (max-width: 620px) {
+
+  .hero {
+    margin-top: -50px;
+    width: 100%
+  }
+
+  .logo img{
+    width: 80%;
+    height: auto;
+    padding-right: 10px;
+    margin-top: -90px;
+  }
+
+  .mobile-top-block {
+    background-color: #f5faf4;
+    height: 100px;
+    width: 100%;
+  }
+
+  .hero-video {
+    margin-top: 20px;
+  }
+
+  #hamburger-btn {
+    margin-top: -35px;
+    margin-right: -10px;
+  }
+
 }
