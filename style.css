@@ -207,8 +207,7 @@ p {
 /*----------------------------------------- hero graphics & hero video -----------------------------------------*/
 
 .hero,
-.hero2,
-.hero3 {
+.hero2 {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
@@ -226,12 +225,6 @@ p {
 
  .hero2 img {
   margin-top: -80px;
-  width: 100%;
- }
-
- .hero3 img {
-  margin-top: -40px;
-  margin-bottom: -110px;
   width: 100%;
  }
 
@@ -290,12 +283,12 @@ justify-content: right;
 
 .carousel-viewport {
   overflow:hidden;
-  width: 72%;
+  width: 420px;
 }
 
 .carousel-track {
   display: flex;
-  gap: 2px;
+  gap: 0;
   transition: transform 0.4s ease;
   height: 100%;
 }
@@ -412,6 +405,7 @@ justify-content: right;
   margin: 0;
   flex: 1;
   justify-content: flex-start;
+  padding-right: 40px;
 }
 
 .process-wooden-text p {
@@ -464,36 +458,56 @@ footer {
   padding-bottom: 30px;
 }
 
-.footer-left,
 .footer-middle,
-.footer-right {
+.footer-right,
+.footer-left {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: flex-end;
   z-index: 2;
   margin: 0 auto;
 }
 
-.footer-left p,
+.footer-middle {
+  margin-bottom: -10px;
+}
+
 .footer-middle p,
 .footer-right p {
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size)-50%;
+  font-size: var(--body-font-size);
   color: var(--black-text-color);
-  justify-content: flex-start;
 }
 
-.footer-left {
-  gap: 15px;
-  display:flex;
-  justify-content: center;
+.logo-footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .logo-footer img {
-  width: 200px;
+  width: 180px;
+  height:auto;
   transition: transform 0.3s ease;
-  margin-top: -60px;
 } 
+
+.hero3 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;    
+    max-width: 1500px;
+    z-index: 1;
+    pointer-events: none;
+ }
+
+  .hero3 img {
+  margin-top: -40px;
+  margin-bottom: -140px;
+  width: 100%;
+ }
 
 .social {
   display: flex;
@@ -586,36 +600,78 @@ footer {
     gap: 25px;
     margin-left: 40px;
   }
+
+  .carousel-viewport {
+  overflow:hidden;
+  width: 400px;
 }
 
-/* Show hamburger menu at 1110px */
-@media (max-width: 1110px) {
+.wooden-text ,
+.wooden-text-reverse {
+  width: 90%;
+}
+
+}
+
+/* =======================================Show hamburger menu at 1025px */
+@media (max-width: 1025px) {
   /* Hide desktop nav, show hamburger */
   .desktop-nav {
     display: none !important;
   }
   
-  #hamburger-btn {
-    display: block;
-    margin-left: auto;
-    margin-right: 15%;
-    padding-top: 50px;
+   .navbar {
+    padding-top: 75px;
+    margin: 0;
     position: relative;
+    z-index: 3000;
   }
+
+    .logo {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3000;
+  }
+
+  .hero {
+    position: relative;
+    margin-top: 0;
+  }
+
+  .hero img {
+    margin-top:0;
+    display:block;
+  }
+
+  #hamburger-btn {
+    margin-top: 0;
+    padding-top: 0;
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    z-index: 4000;
+  }
+
+  #hamburger-btn,
+#hamburger-btn .hamburger {
+  display: block;
+}
   
   .hamburger {
-    display: inline-block;
+    display: block;
     cursor: pointer;
     background: transparent;
     border: 0;
     padding: 20px;
-    z-index: 3001;
+    z-index: 4000;
     position: relative;
   }
   
   .hamburger-box {
-    width: 40px;
-    height: 32px;
+    width: 50px;
+    height: 42px;
     display: inline-block;
     position: relative;
   }
@@ -671,7 +727,8 @@ footer {
     top: 0;
     right: -100%;
     width: 300px;
-    height: 100vh;
+    height: 50vh;
+    border-radius: 8px;
     background: white;
     box-shadow: -2px 0 10px rgba(0,0,0,0.1);
     transition: right 0.3s ease;
@@ -738,7 +795,7 @@ footer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    background: #f8f8f8;
+    background: #effaee;
     display: block;
   }
   
@@ -754,22 +811,26 @@ footer {
     padding: 12px 20px 12px 40px;
     font-size: 13px;
     display: block;
+    font-family: var(--body-font-family);
+    font-weight: lighter;
   }
   
   /* Secondary nav hide */
   .secondary-nav-links {
     display: none;
   }
-}
-
-/* Tablet and below (1024px) */
-@media (max-width: 1024px) {
   
   /* Navigation adjustments */
   .navbar {
-    margin-left: 3%;
+    margin: 0 auto;
+    z-index: 2;
   }
   
+  .logo img {
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+  }
   /* Hero adjustments */
   .hero img {
     margin-top: -100px;
@@ -781,9 +842,13 @@ footer {
   
   .hero3 img {
     margin-top: -20px;
-    margin-bottom: -80px;
+    margin-bottom: -115px;
   }
   
+  footer {
+    padding:0;
+  }
+
   /* Hero video section */
   .hero-container {
     flex-direction: column;
@@ -794,7 +859,7 @@ footer {
     width: 100%;
     max-width: 800px;
     height: 500px;
-    margin-top: -100px;
+    margin-top: -20px;
   }
   
   .wooden-description {
@@ -827,7 +892,7 @@ footer {
   
   /* Carousel show one image at a time */
   .carousel-viewport {
-    width: 100%;
+    width: 400px;
   }
   
   .carousel-track img {
@@ -844,6 +909,12 @@ footer {
     max-width: 100%;
   }
   
+  .wooden-text ,
+.wooden-text-reverse,
+.process-wooden-text {
+  width: 75%;
+}
+
   /* Process section */
   .process-wooden-wrapper {
     flex-direction: column;
@@ -851,8 +922,7 @@ footer {
     padding: 20px 20px 40px 20px;
   }
   
-  .process-wooden-image,
-  .process-wooden-text {
+  .process-wooden-image {
     max-width: 100%;
   }
   
@@ -868,14 +938,16 @@ footer {
   .video-text p {
     width: 85%;
   }
+
+
 }
 
-/* Mobile landscape and smaller tablets (768px) */
+/* ================================Mobile landscape and smaller tablets (768px) */
 @media (max-width: 768px) {
   
-  /* Logo adjustments */
   .logo img {
-    height: 80px;
+    height: 100px;
+    width: auto;
     padding: 0 0 10px 0;
   }
   
@@ -884,6 +956,24 @@ footer {
     margin-left: 20px;
   }
   
+      .logo {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3000;
+  }
+
+  .hero {
+    position: relative;
+    margin-top: 0;
+  }
+
+  .hero img {
+    margin-top:0;
+    display:block;
+  }
+
   /* Typography */
   h1 {
     font-size: 32px;
@@ -916,7 +1006,7 @@ footer {
   /* Hero video */
   .hero-video {
     height: 400px;
-    margin-top: -60px;
+    margin-top: -20px;
   }
   
   .wooden-description {
