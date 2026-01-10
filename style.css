@@ -225,7 +225,7 @@ p {
  }
 
  .hero2 img {
-  margin-top: -100px;
+  margin-top: -80px;
   width: 100%;
  }
 
@@ -358,7 +358,7 @@ justify-content: right;
 .wooden-text,
 .wooden-text-reverse {
   grid-column: 2;
-  width: 70%;
+  width: 79%;
 }
 
 .wooden-text {
@@ -380,6 +380,45 @@ justify-content: right;
   grid-column: 2;
   justify-self: start;
 }
+
+/*----------------------------------------- pbs video section -----------------------------------------*/
+
+.process-wooden-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 0 40px 0;
+  gap: 20px;
+  max-width: 1200px;
+}
+
+.process-wooden-image {
+  max-width: 550px;
+  margin: 0 auto;
+  flex: 1;
+  display:flex;
+  justify-content: flex-end;
+}
+
+.process-wooden-image img {
+  width:100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.process-wooden-text {
+  max-width: 500px;
+  margin: 0;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.process-wooden-text p {
+  font-size: var(--body-font-size);
+  font-family: var(--body-font-family);
+}
+
 
 /*----------------------------------------- pbs video section -----------------------------------------*/
 
