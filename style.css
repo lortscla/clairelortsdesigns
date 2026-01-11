@@ -306,10 +306,9 @@ justify-content: right;
 }
 
 .carousel-track img {
-  height: 450px;
+  height: 500px;
   width: auto;
   flex-shrink: 0;
-  border-radius: 8px;
   object-fit: cover;
 }
 
@@ -352,7 +351,6 @@ justify-content: right;
   width: 100%;
   max-width: 420px;
   height: auto;
-  border-radius: 8px;
 }
 
 .wooden-image {
