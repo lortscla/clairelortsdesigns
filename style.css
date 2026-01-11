@@ -987,35 +987,85 @@ footer {
 /* ================================Mobile landscape and smaller tablets (768px) */
 @media (max-width: 768px) {
   
-
-
-  .logo img {
-    height: 100px;
-    width: auto;
-    padding: 0 0 10px 0;
+  .mobile-top-block {
+    display: block;
+    width: 100vw;
+    height: 70px;
+    background-color: #f5faf4;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    z-index: 5;
   }
-  
+
+  .topbar {
+    max-width: none;
+    position: relative;
+    z-index: 3000; /* ADD THIS - keeps topbar and logo on top */
+  }
+
   .navbar {
     padding: 20px 0 0 0;
     margin-left: 20px;
+    position: relative;
+    z-index: 3000;
   }
-  
-      .logo {
+
+  .logo {
     position: absolute;
-    top: 40px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3000;
   }
 
+  .logo img {
+    height: 120px;
+    width: auto;
+    padding: 0 0 10px 0;
+  }
+
   .hero {
     position: relative;
     margin-top: -30px;
+    z-index: 10; /* LOWER z-index so logo appears above */
   }
 
   .hero img {
     margin-top: 10px;
-    display:block;
+    display: block;
+    position: relative;
+    z-index: 10; /* REMOVE the 2000, use 10 instead */
+  }
+
+  .hero-container {
+    max-width: none; 
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    z-index: 1; /* ADD THIS */
+  }
+  
+  .hero-video {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    max-height: 700px;
+    overflow: hidden;
+    margin-top: -250px; /* Adjust this value */
+    margin-left: 0;
+    border-radius: 0;
+    position: relative;
+    z-index: 1; /* ADD THIS */
   }
 
   /* Typography */
@@ -1047,12 +1097,6 @@ footer {
     padding: 0 20px 30px 20px;
   }
   
-  /* Hero video */
-  .hero-video {
-    height: 400px;
-    margin-top: -20px;
-  }
-  
   .wooden-description {
     width: 95%;
     padding: 30px 10px 0 10px;
@@ -1060,7 +1104,7 @@ footer {
   
   /* Carousel - ensure one image shows at a time */
   .carousel-viewport {
-    width: 75%;
+    width: 60%;
   }
   
   .carousel-track img {
@@ -1122,6 +1166,9 @@ footer {
 /* ==========================================Small mobile (700px) */
 @media (max-width: 700px) {
   
+.hero-video {
+  height:700px;
+}
   .logo img {
     height: 100px;
     width: auto;
@@ -1166,7 +1213,7 @@ footer {
   }
 
   .hero img {
-    margin-top:26px;
+    margin-top:0;
   }
   
   .hero2 img {
@@ -1174,11 +1221,6 @@ footer {
     margin-bottom: -50px;
   }
    
-  /* Hero video */
-  .hero-video {
-    height: 300px;
-    margin-top: -20px;
-  }
   
   /* Containers */
   #container-about,
@@ -1196,7 +1238,7 @@ footer {
   .carousel-track img {
     width: 100%;
     height: auto;
-    max-height: 280px;
+    max-height: 340px;
   }
   
   .carousel-btn {
@@ -1277,10 +1319,10 @@ footer {
   }
 
   .logo img{
-    width: 80%;
+    width: 70%;
     height: auto;
     padding-right: 10px;
-    margin-top: -90px;
+    margin-top: -60px;
   }
 
   .mobile-top-block {
@@ -1289,9 +1331,6 @@ footer {
     width: 100%;
   }
 
-  .hero-video {
-    margin-top: 20px;
-  }
 
   #hamburger-btn {
     margin-top: -35px;
