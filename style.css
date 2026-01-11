@@ -779,17 +779,14 @@ footer {
   /* Mobile navigation */
   .mobile-nav {
     position: fixed;
-    top: 10;
+    margin-top: 0;
     right: -100%;
     width: 300px;
-    height: 50vh;
+    height: 57vh;
     border-radius: 8px;
-    background: white;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
     transition: right 0.3s ease;
     z-index: 3000;
     overflow-y: auto;
-    padding-top: 80px;
     display: block;
   }
   
@@ -807,6 +804,7 @@ footer {
   .mobile-links > li {
     border-bottom: 1px solid #eee;
     display: block;
+    background: white;
   }
   
   .mobile-links > li a,
