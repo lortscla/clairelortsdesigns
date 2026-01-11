@@ -7,8 +7,8 @@
   --header-font-family: 'Garamond', serif;
   --h1-font-weight: bold;
   --h2-font-weight: bold;
-  --h1-font-size: 40px;
-  --h2-font-size: 30px;
+  --h1-font-size: 30px;
+  --h2-font-size: 25px;
   --body-font-size: 16px;
   --button-font-size: 15px;
   --button-background-color: #641435;
@@ -37,6 +37,12 @@ html, body {
 
 body {
   background-color: white;  
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 html {
@@ -241,12 +247,13 @@ p {
 }
 
 .hero-video {
-  width: 1000px;
-  height: 600px;
+  width: 1400px;
+  height: 700px;
   overflow: hidden;
   border-radius: 8px;
-  clip-path: url(#wave-clip);
-  margin-top: -160px;
+  /*clip-path: url(#wave-clip);*/
+  margin-top: -200px;
+  margin-left: -45px;
 }
 
 video {
@@ -558,8 +565,6 @@ footer {
 .mobile-nav, #hamburger-btn { display: none; }
 
 
-
-
 /* ======================================== responsive and mobile ======================================== */
 
 /* ========================================
@@ -568,12 +573,15 @@ footer {
 
 /* Remove video curve below 1500px and align with h1 */
 @media (max-width: 1500px) {
+  
   .hero-video {
-    width: 100%;
-    max-width: 1000px;
-    clip-path: none;
+    width: 50%;
+    height: 600px;
+    /*clip-path: none;*/
+    overflow: hidden;
     border-radius: 8px 8px 0 0;
-    margin-top: 0;
+     margin-top: -200px;
+  margin-left: -45px;
   }
   
   .hero-container {
@@ -581,7 +589,7 @@ footer {
   }
   
   video {
-    object-position: center center;
+    object-position: center;
   }
 }
 
@@ -621,6 +629,46 @@ footer {
 /* =======================================Show hamburger menu at 1025px */
 @media (max-width: 1025px) {
   /* Hide desktop nav, show hamburger */
+  
+ 
+      .hero-container {
+    max-width: none; /* Remove max-width constraint */
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+  }
+  
+  .hero-video {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    max-height: 600px;
+    overflow: hidden;
+    margin-top: -300px;
+    margin-left: 0;
+    border-radius: 0;
+  }
+  
+  video {
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .wooden-description {
+    width: 90%;
+    max-width: 1200px;
+    padding: 40px 20px 0 20px;
+    margin: 0 auto;
+  }
+
   .desktop-nav {
     display: none !important;
   }
@@ -654,7 +702,7 @@ footer {
     margin-top: 0;
     padding-top: 0;
     position: absolute;
-    top: 100px;
+    top: 120px;
     right: 50px;
     z-index: 4000;
   }
@@ -667,16 +715,18 @@ footer {
   .hamburger {
     display: block;
     cursor: pointer;
-    background: transparent;
+    background: #fff;
+    border-radius: 8px;
     border: 0;
-    padding: 20px;
+    padding: 10px 5px 5px 15px;
     z-index: 4000;
     position: relative;
+    margin: 20px 20px 0 0;
   }
   
   .hamburger-box {
     width: 50px;
-    height: 42px;
+    height: 50px;
     display: inline-block;
     position: relative;
   }
@@ -778,7 +828,7 @@ footer {
     border: none;
     text-align: left;
     color: var(--h1-color);
-    font-family: var(--header-font-family);
+    font-family: var(--body-font-family);
     font-weight: var(--h2-font-weight);
     font-size: 14px;
     text-transform: uppercase;
@@ -800,7 +850,7 @@ footer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    background: #effaee;
+    background: #f7fdf7;
     display: block;
   }
   
@@ -820,6 +870,11 @@ footer {
     font-weight: lighter;
   }
   
+    .mobile-submenu li a {
+    font-family: var(--body-font-family);
+    font-weight:inherit;
+  }
+
   /* Secondary nav hide */
   .secondary-nav-links {
     display: none;
@@ -852,24 +907,6 @@ footer {
   
   footer {
     padding:0;
-  }
-
-  /* Hero video section */
-  .hero-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .hero-video {
-    width: 100%;
-    max-width: 800px;
-    height: 500px;
-    margin-top: -20px;
-  }
-  
-  .wooden-description {
-    width: 90%;
-    padding: 40px 20px 0 20px;
   }
   
   /* Wooden types sections - stack layout */
