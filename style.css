@@ -986,7 +986,7 @@ footer {
   .mobile-top-block {
     display: block;
     width: 100vw;
-    height: 70px;
+    height: 90px;
     background-color: #f5faf4;
     position: relative;
     left: 50%;
@@ -1023,9 +1023,21 @@ footer {
     padding: 0 0 10px 0;
   }
 
+   #hamburger-btn {
+    margin-top: 0;
+    position: absolute;
+    top: -70px;
+    right: 50px;
+    z-index: 4000;
+  }
+
+  .hamburger {
+    background: transparent;
+  }
+
   .hero {
     position: relative;
-    margin-top: -30px;
+    margin-top: -31px;
     z-index: 10; /* LOWER z-index so logo appears above */
   }
 
