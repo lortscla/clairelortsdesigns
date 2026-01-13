@@ -4,7 +4,7 @@
   --white-text-color: #fff;
   --hover-color: #818c7c;
   --body-font-family: 'Montserrat', sans-serif;
-  --header-font-family: 'Garamond', serif;
+  --header-font-family: 'Cormorant Garamond', serif;
   --h1-font-weight: bold;
   --h2-font-weight: bold;
   --h1-font-size: 30px;
@@ -93,7 +93,7 @@ html {
   text-decoration: none;
   color: var(--h1-color);
   font-weight: var(--h2-font-weight);
-  font-size: 14px;
+  font-size: 16px;
   font-family: var(--header-font-family);
   text-transform: var(--button-text-style);
 }
