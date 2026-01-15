@@ -37,7 +37,7 @@ html, body {
 
 body {
   background-color: white;  
-  -ms-overflow-style: none;  /* IE and Edge */
+  -ms-overflow-style: none;  /* Int.expl. and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
@@ -85,7 +85,7 @@ html {
   padding-top: 20px;
   gap: 70px;
   margin: 0 auto;
-  margin: 30px 0 0 120px;
+  margin: 30px 0 0 30px;
   align-items: center;
 }
 
@@ -99,36 +99,10 @@ html {
 }
 
 .nav-links a:hover, 
-.secondary-nav-links a:hover,
 .buttons a:hover,
 .social-text a:hover,
 .footer-right a:hover {
   color: var(--hover-color);
-}
-
-.secondary-nav-links {
-  position: absolute;
-  justify-content: flex-start;
-  top: 20px;
-  right: 0;
-  z-index: 2001;
-  margin-right: 100px;
-}
-
-.secondary-nav-links ul {
-  display: flex;
-  gap: 50px;
-  list-style: none;
-  border:0.1px #000;
-}
-
-.secondary-nav-links a {
-  text-decoration: none;
-  color: var(--h1-color);
-  font-family: var(--header-font-family);
-  font-weight: var(--h2-font-weight);
-  font-size: 13px;
-  text-transform: var(--button-text-style);
 }
 
 .nav-links li {
@@ -230,7 +204,7 @@ p {
  }
 
  .hero img {
-  margin-top: -160px;
+  margin-top: -230px;
   width: 100%;
  }
 
@@ -267,6 +241,7 @@ video {
 .wooden-description {
   width: 65%;
   margin: 0 auto;
+  margin-top: -40px;
   padding: 0 20px 0 40px;
 }
 
@@ -569,8 +544,8 @@ footer {
    RESPONSIVE MEDIA QUERIES
 ======================================== */
 
-/* Remove video curve below 1500px and align with h1 */
-@media (max-width: 1500px) {
+/* Remove video curve below 1335px and align with h1 */
+@media (max-width: 1335px) {
   
   .hero-video {
     width: 50%;
@@ -591,41 +566,10 @@ footer {
   }
 }
 
-/* Tighten nav spacing to prevent overlap with hero */
-@media (max-width: 1420px) {
-  .nav-links {
-    gap: 50px;
-    margin-left: 80px;
-  }
-}
 
-@media (max-width: 1300px) {
-  .nav-links {
-    gap: 35px;
-    margin-left: 60px;
-  }
-}
 
-@media (max-width: 1200px) {
-  .nav-links {
-    gap: 25px;
-    margin-left: 40px;
-  }
-
-  .carousel-viewport {
-  overflow:hidden;
-  width: 400px;
-}
-
-.wooden-text ,
-.wooden-text-reverse {
-  width: 90%;
-}
-
-}
-
-/* =======================================Show hamburger menu at 1025px */
-@media (max-width: 1025px) {
+/* =======================================Show hamburger menu at 1270px */
+@media (max-width: 1270px) {
   /* Hide desktop nav, show hamburger */
   
  
@@ -661,7 +605,7 @@ footer {
   }
   
   .wooden-description {
-    width: 90%;
+    width: 70%;
     max-width: 1200px;
     padding: 40px 20px 0 20px;
     margin: 0 auto;
