@@ -13,7 +13,7 @@
   --button-font-size: 15px;
   --button-background-color: #641435;
   --button-text-style: uppercase;
-  --bg-color: #dfedd9;
+  --bg-color: #becdaf;
 }
 
 * {
@@ -30,13 +30,13 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   width: 100%;
+  min-height: 100%;
   max-width: 1500px;
   margin: 0 auto;
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: white;  
+body { 
   -ms-overflow-style: none;  /* Int.expl. and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -46,7 +46,8 @@ body::-webkit-scrollbar {
 }
 
 html {
-  background-color: var(--bg-color );
+  /*background-color: #f6faf5; this is the lighter green at top*/
+  background-color: #dfeed9;
 }
 
 .topbar {
@@ -82,7 +83,8 @@ html {
   list-style: none;
   display: flex;
   justify-content: center;
-  padding-top: 20px;
+  padding-top:15px;
+  border-radius: 8px;
   gap: 70px;
   margin: 0 auto;
   margin: 30px 0 0 30px;
@@ -92,8 +94,8 @@ html {
 .nav-links a {
   text-decoration: none;
   color: var(--h1-color);
-  font-weight: var(--h2-font-weight);
-  font-size: 16px;
+  font-weight:bolder;
+  font-size: 20px;
   font-family: var(--header-font-family);
   text-transform: var(--button-text-style);
 }
@@ -151,7 +153,7 @@ html {
 #container-wooden,
 #container-home {
   max-width: 1500px;
-  background-color: #fff;
+  background-color: transparent;
   padding: 0 40px 40px 40px;
   margin: 0 auto;
 }
@@ -161,18 +163,20 @@ h1 {
   font-family: var(--header-font-family);
   color: var(--h1-color);
   font-size: var(--h1-font-size);
+  font-weight:bold;
   padding-bottom: 40px;
 }
 
 h2 {
   font-family: var(--header-font-family);
   color: var(--h1-color);
-  font-size: var(--h2-font-size);
-  font-weight:normal;
+  font-size: var(--h1-font-size);
+  font-weight:bold;
   text-align: center;
   margin: 30px auto;
-  max-width: 70%;
-  padding: 40px 0 20px 0;
+  max-width: 65%;
+  padding: 20px 0 20px 0;
+   border-radius: 8px;
 }
 
 h3 {
@@ -204,7 +208,7 @@ p {
  }
 
  .hero img {
-  margin-top: -230px;
+  margin-top: -200px;
   width: 100%;
  }
 
@@ -218,6 +222,8 @@ p {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  gap: 30px;
+  padding-bottom: 30px;
 }
 
 .hero-video {
@@ -241,8 +247,10 @@ video {
 .wooden-description {
   width: 65%;
   margin: 0 auto;
-  margin-top: -40px;
+  margin-top: -35px;
   padding: 0 20px 0 40px;
+  border-radius: 8px;
+  padding: 20px 30px 0 30px;
 }
 
 .wooden-description p {
@@ -336,15 +344,17 @@ justify-content: right;
 .wooden-text,
 .wooden-text-reverse {
   grid-column: 2;
-  width: 79%;
+  width: 80%;
+  background-color: #f8fff6;
+  border-radius: 8px;
 }
 
 .wooden-text {
-  padding-left: 40px;
+  padding: 20px 30px 0 40px;
 }
 
 .wooden-text-reverse {
-  padding-right: 40px;
+  padding: 20px 30px 0 40px;
   text-align: right;
   justify-self: right;
 }
@@ -359,7 +369,7 @@ justify-content: right;
   justify-self: start;
 }
 
-/*----------------------------------------- pbs video section -----------------------------------------*/
+/*----------------------------------------- process section -----------------------------------------*/
 
 .process-wooden-wrapper {
   display: flex;
@@ -390,7 +400,9 @@ justify-content: right;
   margin: 0;
   flex: 1;
   justify-content: flex-start;
-  padding-right: 40px;
+  padding: 20px 30px 0 40px;
+   background-color: #f8fff6;
+   border-radius: 8px;
 }
 
 .process-wooden-text p {
@@ -544,8 +556,15 @@ footer {
    RESPONSIVE MEDIA QUERIES
 ======================================== */
 
+@media (max-width: 1425px) {
+
+  .nav-links a {
+    font-size: 18px;
+  }
+}
+
 /* Remove video curve below 1335px and align with h1 */
-@media (max-width: 1335px) {
+@media (max-width: 1370px) {
   
   .hero-video {
     width: 50%;
@@ -564,6 +583,11 @@ footer {
   video {
     object-position: center;
   }
+
+  .nav-links  {
+    gap:50px;
+  }
+
 }
 
 
