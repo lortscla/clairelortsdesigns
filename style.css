@@ -476,6 +476,86 @@ justify-content: right;
   border-radius: 8px;
 }
 
+/*----------------------------------------- sterling silver and lapidary -----------------------------------------*/
+
+.sterling-hero img {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.sterling-hero p {
+  width: 65%;
+  margin: 0 auto;
+  padding-bottom: 90px;
+}
+
+.process-sterling-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 0 40px 0;
+  gap: 30px;
+  max-width: 1200px;
+}
+
+.process-sterling-image {
+  margin: 0 auto;
+  display:flex;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
+
+.process-sterling-image img {
+  width:70%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.process-sterling-text {
+  max-width: 500px;
+  margin: 0 auto;
+  flex: 1;
+  justify-content: flex-start;
+     background-color: transparent;
+   border-radius: 8px;
+}
+
+.process-sterling-text p {
+  font-size: var(--body-font-size);
+  font-family: var(--body-font-family);
+  margin:0;
+}
+
+      .history-img {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        gap: 10px;
+        }
+
+        .history-img figcaption {
+        font-size: var(--body-font-size);
+        color: var(--black-text-color);
+        font-family: var(--body-font-family);
+        text-align: center;
+        padding-top: 15px;
+        }
+
+        .history-text {
+        display: flex;
+        flex-direction: column;
+        font-size: 25px;
+        width: 80%;
+        color: var(--black-text-color);
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 0 100px 0 100px;
+      }
+
 /*----------------------------------------- footer -----------------------------------------*/
 
 footer {
