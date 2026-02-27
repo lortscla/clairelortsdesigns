@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .hero-video {
+  width: 1400px;
+  height: 700px;
+  overflow: hidden;
+  border-radius: 8px;
+  /*clip-path: url(#wave-clip);*/
+  margin-top: -200px;
+  margin-left: -45px;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: center 15%;
+}
+
+  </style>
+</head>
+<body>
+  
+<!------------------------------------------ video hero section ---------------------------------------->
+
+<div class="hero-container">
+
+
+
+  <div class="hero-video">
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    preload="metadata"
+    poster="thumbnail.jpg">
+    <source src="videos/video2.mp4" type="video/mp4">
+  </video>
+  </div>
+
+  <div class="wooden-description">
+    <h1> Natural Original Hardwood Jewelry</h1>
+  <p>Wood is a fantastic medium for earrings and necklaces! Wooden jewelry is extremely lightweight, compliments all skin tones 
+    and hair colors, can be worn with a range of looks from chic and elegant to boho-casual. 
+    </p>
+    <p>All of my wooden jewelry designs, concepts, and processes are 100% original, and I aim to create a diverse range of 
+      styles and interests that lend to unique yet elegant 
+      individualism and self-expression. My design inspiration 
+      is rooted in exploring the emotional mechanics of human perception, understanding why specific sounds, movements, colors, 
+      and forms resonate with us and translating those insights into visual forms.
+  </p>
+  </div>
+
+</div>            
+
+
+<script>
+/* =========================
+     HERO VIDEO
+  ========================= */
+
+  const video = document.getElementById('myVideo');
+  
+  // Only run video code if video exists on this page
+  if (video) {
+    const source = video.querySelector('source');
+    
+    // Load video only when it comes into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          source.src = source.dataset.src;
+          video.load();
+          video.playbackRate = 0.65;
+          observer.unobserve(video);
+        }
+      });
+    });
+    
+    observer.observe(video);
+  }
+  </script>
+  </body>
+</html>

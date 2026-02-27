@@ -1,5 +1,5 @@
 :root {
-  --h1-color: #7a2233;
+  --h1-color: #7a2222;
   --black-text-color: #191919;
   --white-text-color: #fff;
   --hover-color: #818c7c;
@@ -11,7 +11,7 @@
   --h2-font-size: 28px;
   --body-font-size: 17px;
   --button-font-size: 15px;
-  --button-background-color: #7a2233;
+  --button-background-color: #7a2222;
   --button-text-style: uppercase;
   --bg-color: #becdaf;
 }
@@ -166,6 +166,10 @@ h1 {
   padding-bottom: 40px;
 }
 
+.wooden-description h1 {
+  color: var(--h1-color);
+}
+
 h2 {
   font-family: var(--header-font-family);
   color: var(--h1-color);
@@ -222,26 +226,29 @@ p {
   flex-direction: row;
   align-items: flex-start;
   gap: 30px;
-  padding-bottom: 30px;
+  padding: 130px 0 0 0;
+  margin-top: -140px;
 }
 
-.hero-video {
-  width: 1400px;
-  height: 700px;
+
+.slideshow {
+  position: relative;
+  width: 50%;   
+  height: 600px;     
   overflow: hidden;
-  border-radius: 8px;
-  /*clip-path: url(#wave-clip);*/
-  margin-top: -200px;
-  margin-left: -45px;
+  margin-top: -270px;
 }
 
-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  object-position: center 15%;
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
 }
+
+.slide.active { opacity: 1; }
 
 .wooden-description {
   width: 65%;

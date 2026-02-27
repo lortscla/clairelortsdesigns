@@ -30,30 +30,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
- /* =========================
-     HERO VIDEO
+
+  /* =========================
+     hero slideshow
   ========================= */
 
-  const video = document.getElementById('myVideo');
-  
-  // Only run video code if video exists on this page
-  if (video) {
-    const source = video.querySelector('source');
-    
-    // Load video only when it comes into view
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          source.src = source.dataset.src;
-          video.load();
-          video.playbackRate = 0.65;
-          observer.unobserve(video);
-        }
-      });
-    });
-    
-    observer.observe(video);
-  }
+  const images = [
+  'images/wooden/studs-5.webp',
+  'images/wooden/earrings-12.webp',
+  'images/wooden/earrings-15.webp',
+   'images/wooden/earrings-14.webp',
+   'images/wooden/earrings-16.webp',
+  'images/booth.webp',
+];
+
+const DISPLAY_TIME = 2800;
+const FADE_TIME    = 1700;
+let current = 0;
+
+const container = document.querySelector('.slideshow');
+const slides = images.map((url, i) => {
+  const div = document.createElement('div');
+  div.className = 'slide' + (i === 0 ? ' active' : '');
+  div.style.backgroundImage = `url(${url})`;
+  container.appendChild(div);
+  return div;
+});
+
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, DISPLAY_TIME + FADE_TIME);
+
 
   /* =========================
      IMAGE CAROUSEL
