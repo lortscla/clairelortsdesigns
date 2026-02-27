@@ -14,6 +14,8 @@
   --button-background-color: #7a2222;
   --button-text-style: uppercase;
   --bg-color: #becdaf;
+  --light-green-color: #f5faf4;
+  --light-blue-color: rgb(167, 230, 255);
 }
 
 * {
@@ -177,9 +179,10 @@ h2 {
   font-weight:bold;
   text-align: center;
   margin: 30px auto;
-  max-width: 65%;
+  max-width: 67%;
   padding: 20px 0 20px 0;
    border-radius: 8px;
+   background-color: #f5faf4;
 }
 
 h3 {
@@ -228,6 +231,7 @@ p {
   gap: 30px;
   padding: 130px 0 0 0;
   margin-top: -140px;
+  margin-bottom: 50px;
 }
 
 
@@ -236,7 +240,7 @@ p {
   width: 50%;   
   height: 600px;     
   overflow: hidden;
-  margin-top: -270px;
+  margin-top: -225px;
 }
 
 .slide {
@@ -325,6 +329,7 @@ justify-content: right;
 
 /*----------------------------------------- dif. types wooden jewelry -----------------------------------------*/
 
+
 .wooden-type,
 .wooden-type-reverse {
   display: grid;
@@ -384,7 +389,7 @@ justify-content: right;
   margin: 0 auto;
   padding: 20px 0 40px 0;
   gap: 20px;
-  max-width: 1200px;
+  max-width: 1000px;
 }
 
 .process-wooden-image {
