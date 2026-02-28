@@ -48,6 +48,7 @@ const FADE_TIME    = 1700;
 let current = 0;
 
 const container = document.querySelector('.slideshow');
+if (container) {
 const slides = images.map((url, i) => {
   const div = document.createElement('div');
   div.className = 'slide' + (i === 0 ? ' active' : '');
@@ -61,7 +62,7 @@ setInterval(() => {
   current = (current + 1) % slides.length;
   slides[current].classList.add('active');
 }, DISPLAY_TIME + FADE_TIME);
-
+}
 
   /* =========================
      IMAGE CAROUSEL
