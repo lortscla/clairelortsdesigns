@@ -466,6 +466,8 @@ justify-content: right;
   width: 100%;
   height: auto;
   z-index: 1;
+  margin: 0 auto;
+  margin-top: -400px;
 }
 
 .sterling-hero p {
@@ -1070,6 +1072,32 @@ padding-top:20px;
 }
 
 /* ================================Mobile landscape and smaller tablets (768px) */
+@media (max-width: 1180px) {
+
+.sterling-hero img {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  margin: 0 auto;
+  margin-top: -300px;
+}
+
+}
+
+/* ================================Mobile landscape and smaller tablets (768px) */
+@media (max-width: 900px) {
+
+.sterling-hero img {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  margin: 0 auto;
+  margin-top: -200px;
+}
+
+}
+
+/* ================================Mobile landscape and smaller tablets (768px) */
 @media (max-width: 768px) {
 
   .mobile-top-block {
@@ -1494,11 +1522,29 @@ padding-top:20px;
 
 }
 
+
+
 /* ==========================================Small mobile (620px) */
 @media (max-width: 620px) {
 
+  .hamburger-box {
+    width: 20px;
+    height: 20px;
+  }
+
+  #hamburger-btn {
+    margin-top: -35px;
+    margin-right: -10px;
+  }
+
   .hero {
     margin-top: -50px;
+    width: 100%;
+  }
+
+  .mobile-top-block {
+    background-color: #f5faf4;
+    height: 100px;
     width: 100%;
   }
 
@@ -1509,22 +1555,12 @@ padding-top:20px;
     margin-top: -60px;
   }
 
-  .mobile-top-block {
-    background-color: #f5faf4;
-    height: 100px;
-    width: 100%;
-  }
-
-  #hamburger-btn {
-    margin-top: -35px;
-    margin-right: -10px;
-  }
-
   /* Hero container */
 
   .slideshow {
     height: 65vw;
     max-height: 280px;
+    margin-top: 50px;
   }
 
   .wooden-description h1 {
@@ -1534,44 +1570,46 @@ padding-top:20px;
   /* Typography */
 
   h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     font-size: 1.4rem;
     gap: 5px;
-    z-index:200;
+    width: 100%;
+    padding: 20px 0;
+    text-wrap: unset;
+    z-index: 200;
   }
 
-  h2 img {
-    max-height: 40px;
+  h2 img:first-child {
+    width: 150%;
+    max-height: none;
+    height: auto;
+    margin: 0 auto;
+    padding-right: 30%;
+  }
+
+  h2 img:last-child {
+    display: none;
+  }
+
+  #container-wooden-type {
+    padding-bottom: 0;
   }
 
   /* Sterling */
 
-  /* Sterling process images — center them */
-.process-sterling-image {
-  justify-content: center;
-}
-
-/* Slag history images — prevent edge clipping */
-.history-img {
-  flex-direction: column;
-  align-items: center;
-  padding: 0 15px;
-}
-
-.history-img img {
-  max-width: 100%;
-  height: auto;
-}
-
-  .history-img {
-    flex-direction: column;
+  #container-sterling {
+    width: 90%;
   }
 
-  .history-text {
-    padding: 0 15px;
-  }
-
-  .process-sterling-image img {
-    width: 85%;
+  .sterling-hero img {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    margin: 0 auto;
+    margin-top: -100px;
   }
 
   .sterling-hero p {
@@ -1579,60 +1617,40 @@ padding-top:20px;
     padding-bottom: 40px;
   }
 
-}
+  .process-sterling-wrapper {
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-/* ==========================================Small mobile (620px) */
-@media (max-width: 620px) {
+  .process-sterling-image {
+    justify-content: center;
+  }
 
-  .hamburger-box {
-    width: 20px;
-    height: 20px;
+  .process-sterling-image img {
+    width: 85%;
   }
 
   .process-sterling-text p {
     font-size: 14px;
   }
-  #container-sterling {
-    width: 90%;
-  }
-.process-sterling-wrapper {
+
+  /* History / slag */
+
+  .history-img {
+    flex-direction: column;
     align-items: center;
-    padding-left:0;
-    padding-right:0;
+    padding: 0 15px;
   }
-  .slideshow {
-   margin-top:50px;
+
+  .history-img img {
+    max-width: 100%;
+    height: auto;
   }
+
   .history-text {
     width: 80%;
+    padding: 0 15px;
   }
 
-  h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    font-size: 1.5rem;
-    width: 100%;
-    padding: 20px 0;
-    flex-direction: column;
-    text-wrap: unset;
-  }
-
-
-h2 img:first-child {
-  width: 150%;
-  max-height: none;
-  height: auto;
-  margin: 0 auto;
-  padding-right:30%;
-}
-
-h2 img:last-child {
-  display: none;
-}
-
-#container-wooden-type {
-  padding-bottom: 0px; 
-}
 }
