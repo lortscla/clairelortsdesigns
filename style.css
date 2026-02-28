@@ -153,10 +153,15 @@ html {
 #container-about,
 #container-sterling,
 #container-wheretobuy,
-#container-home {
+#container-home,
+#container-wooden-type {
   max-width: 1500px;
   background-color: transparent;
   margin: 0 auto;
+}
+
+#container-wooden-type {
+  padding-bottom: 50px;
 }
 
 h1 {
@@ -179,10 +184,8 @@ h2 {
   font-weight:bold;
   text-align: center;
   margin: 30px auto;
-  max-width: 67%;
+  width: 100%;
   padding: 20px 0 20px 0;
-   border-radius: 8px;
-   background-color: #f5faf4;
 }
 
 h3 {
@@ -425,42 +428,10 @@ justify-content: right;
 
 .faq-container {
   margin: 0 auto;
-  padding: 20px 20% 20px 20%;
+  padding: 50px 20% 20px 20%;
 }
 
-/*----------------------------------------- pbs video section -----------------------------------------*/
 
-.video-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.video-text p {
-  width: 70%;
-  font-size: var(--h2-font-size);
-  font-family: var(--header-font-family);
-  color: var(--h1-color);
-  display:flex;
-  margin:0 auto;
-  text-align: center;
-  padding-bottom: 20px;
-}
-
-.video-wrapper {
-  width: 70%;
-  margin: 0 auto;
-  aspect-ratio: 16 / 9;
-  padding-bottom: 100px;
-}
-
-.video-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
 /*----------------------------------------- where to buy -----------------------------------------*/
 
 .wheretobuy {
@@ -601,6 +572,10 @@ footer {
   color: var(--black-text-color);
 }
 
+.wpsu-video {
+padding-top:20px;
+}
+
 .logo-footer {
   display: flex;
   align-items: center;
@@ -608,7 +583,7 @@ footer {
 }
 
 .logo-footer img {
-  width: 250px;
+  width: 290px;
   height:auto;
   transition: transform 0.3s ease;
 } 
