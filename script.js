@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
   'images/wooden/earrings-15.webp',
    'images/wooden/earrings-14.webp',
    'images/wooden/earrings-16.webp',
-  'images/booth.webp',
 ];
 
 const DISPLAY_TIME = 2800;
