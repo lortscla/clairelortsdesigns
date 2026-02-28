@@ -1589,24 +1589,36 @@ padding-top:20px;
     height: 20px;
   }
 
+  .process-sterling-text p {
+    font-size: 14px;
+  }
+  #container-sterling {
+    width: 90%;
+  }
+.process-sterling-wrapper {
+    align-items: center;
+    padding-left:0;
+    padding-right:0;
+  }
   .slideshow {
    margin-top:50px;
+  }
+  .history-text {
+    width: 80%;
   }
 
   h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 20px;
     font-size: 1.5rem;
     width: 100%;
     padding: 20px 0;
+    flex-direction: column;
+    text-wrap: unset;
   }
 
-  h2 {
-  flex-direction: column;
-  gap: 20px;
-}
 
 h2 img:first-child {
   width: 150%;
