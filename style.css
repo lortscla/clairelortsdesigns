@@ -152,7 +152,6 @@ html {
 
 #container-about,
 #container-sterling,
-#container-wheretobuy,
 #container-home,
 #container-wooden-type {
   max-width: 1500px;
@@ -428,7 +427,7 @@ justify-content: right;
 
 .faq-container {
   margin: 0 auto;
-  padding: 50px 20% 20px 20%;
+  padding: 20px 20% 20px 20%;
 }
 
 
@@ -440,13 +439,14 @@ justify-content: right;
   align-items: center;
   margin: 0 auto;
   padding: 0 0 40px 0;
-  max-width: 60%;
+  max-width: 1500px;
 }
 
 .wheretobuy-text {
   background-color: transparent;
   justify-content: left;
   padding-top: 30px;
+  width: 60%;
 }
 
 .wheretobuy-image p {
@@ -1172,6 +1172,10 @@ padding-top:20px;
     padding: 0 20px 30px 20px;
   }
   
+  #container-about > .wooden-type {
+    margin-bottom: 50px;
+  }
+
   .wooden-description {
     width: 95%;
     padding: 30px 10px 0 10px;
