@@ -1091,6 +1091,7 @@ padding-top:20px;
   margin-top: -300px;
 }
 
+
 }
 
 /* ================================Mobile landscape and smaller tablets (768px) */
@@ -1103,6 +1104,11 @@ padding-top:20px;
   margin: 0 auto;
   margin-top: -200px;
 }
+
+#container-sterling h2 {
+  margin-top:0;
+  padding-top: 0;
+  }
 
 }
 
