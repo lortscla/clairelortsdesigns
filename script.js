@@ -64,6 +64,29 @@ setInterval(() => {
 }, DISPLAY_TIME + FADE_TIME);
 }
 
+/* =========================
+   ACTIVE NAV HIGHLIGHTING
+========================= */
+
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+document.querySelectorAll('.nav-links a, .mobile-links > li > a').forEach(link => {
+  const linkPage = link.getAttribute('href');
+  if (linkPage === currentPage) {
+    link.classList.add('active-page');
+  }
+});
+
+// Highlight "Other Work" parent when on a sub-page
+const subPages = ['sterling.html'];
+if (subPages.includes(currentPage)) {
+  document.querySelectorAll('.nav-links a, .mobile-links .mobile-dropdown-toggle').forEach(link => {
+    if (link.textContent.trim().startsWith('Other Work')) {
+      link.classList.add('active-page');
+    }
+  });
+}
+
   /* =========================
      IMAGE CAROUSEL
   ========================= */

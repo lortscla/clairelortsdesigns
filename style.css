@@ -149,6 +149,14 @@ html {
     transform: translateY(-5px);
 }
 
+/* Desktop active nav underline */
+.nav-links a.active-page {
+  border-bottom: 3px solid var(--h1-color);
+  padding-bottom: 4px;
+}
+
+
+
 /*----------------------------------------- throughout -----------------------------------------*/
 
 #container-about,
@@ -494,8 +502,9 @@ justify-content: right;
 }
 
 .process-sterling-image img {
-  width:70%;
-  height: auto;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
   border-radius: 8px;
 }
 
