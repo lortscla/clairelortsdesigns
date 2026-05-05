@@ -4,13 +4,28 @@ document.addEventListener("DOMContentLoaded", function () {
      HAMBURGER MENU TOGGLE
   ========================= */
 
-  const hamburger = document.querySelector(".hamburger");
+const hamburger = document.querySelector(".hamburger");
   const mobileNav = document.querySelector(".mobile-nav");
+  const stickyHamburger = document.querySelector(".sticky-hamburger-btn");
+
+  // Helper that keeps both hamburger icons in sync with the mobile-nav state
+  function syncHamburgerStates() {
+    const isOpen = mobileNav && mobileNav.classList.contains("show");
+    if (hamburger) hamburger.classList.toggle("is-active", isOpen);
+    if (stickyHamburger) stickyHamburger.classList.toggle("is-active", isOpen);
+  }
 
   if (hamburger && mobileNav) {
     hamburger.addEventListener("click", function () {
-      this.classList.toggle("is-active");
       mobileNav.classList.toggle("show");
+      syncHamburgerStates();
+    });
+  }
+
+  if (stickyHamburger && mobileNav) {
+    stickyHamburger.addEventListener("click", function () {
+      mobileNav.classList.toggle("show");
+      syncHamburgerStates();
     });
   }
 
@@ -70,7 +85,7 @@ setInterval(() => {
 
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-document.querySelectorAll('.nav-links a, .mobile-links > li > a').forEach(link => {
+document.querySelectorAll('.nav-links a, .mobile-links > li > a, .sticky-nav > ul > li > a').forEach(link => {
   const linkPage = link.getAttribute('href');
   if (linkPage === currentPage) {
     link.classList.add('active-page');
@@ -80,13 +95,43 @@ document.querySelectorAll('.nav-links a, .mobile-links > li > a').forEach(link =
 // Highlight "Other Work" parent when on a sub-page
 const subPages = ['sterling.html'];
 if (subPages.includes(currentPage)) {
-  document.querySelectorAll('.nav-links a, .mobile-links .mobile-dropdown-toggle').forEach(link => {
+  document.querySelectorAll('.nav-links a, .mobile-links .mobile-dropdown-toggle, .sticky-nav > ul > li > a').forEach(link => {
     if (link.textContent.trim().startsWith('Other Work')) {
       link.classList.add('active-page');
     }
   });
 }
 
+/* =========================
+     STICKY HEADER ON SCROLL
+  ========================= */
+
+  const stickyHeader = document.getElementById('stickyHeader');
+  const SCROLL_THRESHOLD = 200;
+
+  if (stickyHeader) {
+    let ticking = false;
+
+    function updateStickyHeader() {
+      if (window.scrollY > SCROLL_THRESHOLD) {
+        stickyHeader.classList.add('show');
+      } else {
+        stickyHeader.classList.remove('show');
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateStickyHeader);
+        ticking = true;
+      }
+    });
+
+    // Run once on load in case the page is opened scrolled (e.g. anchor link)
+    updateStickyHeader();
+  }
+  
   /* =========================
      IMAGE CAROUSEL
   ========================= */

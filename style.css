@@ -660,6 +660,184 @@ padding-top:20px;
 .desktop-nav { display: block; }
 .mobile-nav, #hamburger-btn { display: none; }
 
+/* ============================================================
+   STICKY SCROLL HEADER
+   Slides down from the top when user scrolls past the navbar.
+   Logo on the left, nav items centered, paler-green bg,
+   darker-green drop shadow.
+============================================================ */
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1500px;
+  background-color: var(--light-green-color); /* paler green #f5faf4 */
+  box-shadow: 0 4px 14px rgba(129, 140, 124, 0.5); /* darker green #818c7c */
+  z-index: 5000;
+  transform: translateY(-100%);
+  transition: transform 0.35s ease;
+    
+}
+
+.sticky-header.show {
+  transform: translateY(0);
+  
+}
+
+.sticky-header-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+  padding: 0 5%;
+}
+
+/* --- Logo (left) --- */
+.sticky-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.sticky-logo img {
+  height: 55px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.sticky-logo:hover img {
+  filter: brightness(1.5);
+  transform: translateY(-3px);
+}
+
+/* --- Nav (centered) --- */
+.sticky-nav {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sticky-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 45px;
+  align-items: center;
+}
+
+.sticky-nav li {
+  position: relative;
+}
+
+.sticky-nav a {
+  text-decoration: none;
+  color: var(--h1-color);
+  font-family: var(--header-font-family);
+  font-weight: bolder;
+  font-size: 18px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sticky-nav a:hover {
+  color: var(--hover-color);
+}
+
+.sticky-nav a.active-page {
+  border-bottom: 3px solid var(--h1-color);
+  padding-bottom: 4px;
+}
+
+/* --- Sticky dropdown --- */
+.sticky-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: none;
+  width: 220px;
+  padding: 0;
+  margin-top: 12px;
+  text-align: center;
+  list-style: none;
+  z-index: 6000;
+  box-shadow: 0 3px 10px rgba(129, 140, 124, 0.4);
+flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.sticky-dropdown:hover .sticky-dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-nav .sticky-dropdown ul {
+  gap: 0;
+}
+
+.sticky-dropdown-menu a {
+  display: block;
+  padding: 11px 5px;
+  color: var(--h1-color);
+  text-decoration: none;
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: none;
+  white-space: normal;
+}
+
+/* --- Sticky hamburger button (mobile only) --- */
+.sticky-hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 42px;
+  height: 42px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.sticky-hamburger-btn span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--h1-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  margin: 2.5px auto;
+}
+
+.sticky-hamburger-btn.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.sticky-hamburger-btn.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.sticky-hamburger-btn.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 
 /* ======================================== responsive and mobile ======================================== */
 
@@ -672,6 +850,11 @@ padding-top:20px;
   .nav-links a {
     font-size: 18px;
   }
+
+  .dropdown-menu a {
+  font-size: 12px;
+}
+
 }
 
 /* Remove video curve below 1335px and align with h1 */
@@ -694,6 +877,24 @@ padding-top:20px;
 
   /* Navigation */
 
+  /* --- Sticky header on tablet/mobile: hide centered nav, show hamburger --- */
+  .sticky-nav {
+    display: none;
+  }
+
+  .sticky-hamburger-btn {
+    display: flex;
+  }
+
+  .sticky-header-inner {
+    height: 65px;
+    padding: 0 25px;
+  }
+
+  .sticky-logo img {
+    height: 45px;
+  }
+
   .desktop-nav {
     display: none !important;
   }
@@ -701,6 +902,10 @@ padding-top:20px;
   #hamburger-btn,
   #hamburger-btn .hamburger {
     display: block;
+  }
+
+  .mobile-submenu a {
+    font-size: 10px;
   }
 
   .navbar {
@@ -1378,6 +1583,16 @@ padding-top:20px;
 /* ==========================================Small mobile (700px) */
 @media (max-width: 700px) {
   
+  /* --- Sticky header on small mobile --- */
+  .sticky-header-inner {
+    height: 60px;
+    padding: 0 18px;
+  }
+
+  .sticky-logo img {
+    height: 40px;
+  }
+
   .logo img {
     height: 100px;
     width: auto;
