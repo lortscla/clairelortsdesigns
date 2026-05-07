@@ -845,6 +845,8 @@ flex-direction: column;
    RESPONSIVE MEDIA QUERIES
 ======================================== */
 
+
+
 @media (max-width: 1425px) {
 
   .nav-links a {
@@ -854,6 +856,14 @@ flex-direction: column;
   .dropdown-menu a {
   font-size: 12px;
 }
+
+ #container-home h2 img {
+    max-height: 43px;
+  }
+
+  #container-wheretobuy h2 img {
+    max-height: 45px;
+  }
 
 }
 
@@ -1007,7 +1017,7 @@ flex-direction: column;
     margin-top: 0;
     right: -100%;
     width: 300px;
-    height: 57vh;
+    max-height: 57vh;
     border-radius: 8px;
     transition: right 0.3s ease;
     z-index: 3000;

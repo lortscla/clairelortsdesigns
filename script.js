@@ -30,6 +30,24 @@ const hamburger = document.querySelector(".hamburger");
   }
 
   /* =========================
+   CLOSE MOBILE NAV ON OUTSIDE CLICK
+========================= */
+
+document.addEventListener("click", function (event) {
+  if (!mobileNav || !mobileNav.classList.contains("show")) return;
+
+  const clickedInsideNav        = mobileNav.contains(event.target);
+  const clickedHamburger        = hamburger && hamburger.contains(event.target);
+  const clickedStickyHamburger  = stickyHamburger && stickyHamburger.contains(event.target);
+
+  if (!clickedInsideNav && !clickedHamburger && !clickedStickyHamburger) {
+    mobileNav.classList.remove("show");
+    syncHamburgerStates();
+  }
+});
+
+
+  /* =========================
      MOBILE DROPDOWN TOGGLES
   ========================= */
 
